@@ -1,4 +1,4 @@
-package Encapsulation;
+package encapsulation;
 
 public class Person {
     // static field
@@ -63,7 +63,7 @@ public class Person {
         return gender;
     }
     // setter
-    public void setAge() {
+    private void setAge() { // --private
         age = currentYear - birthYear;
     }
     public void setGender(String gender) {
@@ -71,5 +71,17 @@ public class Person {
         if (isValidGender) {
             this.gender = gender;
         }
+    }
+
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", birthYear=" + birthYear +
+                ", gender='" + gender + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
