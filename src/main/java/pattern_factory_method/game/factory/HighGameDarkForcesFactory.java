@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class HighGameDarkForcesFactory implements DarkForcesFactory {
     @Override
-    public DarkForces[] createMonster() {
+    public DarkForces[] createMonsters() {
         int amount = new Random().nextInt(5)+6;
         DarkForces[] darkForces = new DarkForces[amount];
         darkForces[0] = new BabaYaga();

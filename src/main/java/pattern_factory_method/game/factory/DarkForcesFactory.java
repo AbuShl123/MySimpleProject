@@ -6,7 +6,7 @@ import pattern_factory_method.game.darkForces.ForestMonster;
 import pattern_factory_method.game.darkForces.OldTree;
 
 public interface DarkForcesFactory {
-    DarkForces[] createMonster();
+    DarkForces[] createMonsters();
 
     default DarkForces createSingleMonster(String monster){
         if (monster.equalsIgnoreCase("forest monster")) {
