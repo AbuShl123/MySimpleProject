@@ -10,9 +10,5 @@ public class HelloWorld {
                 count++;
             }
         }
-
-        System.out.println(count);
-
     }
 }
-
