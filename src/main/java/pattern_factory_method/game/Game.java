@@ -1,5 +1,7 @@
 package pattern_factory_method.game;
 
+import pattern_factory_method.game.darkForces.DarkForces;
+import pattern_factory_method.game.darkForces.ForestMonster;
 import pattern_factory_method.game.factory.DarkForcesFactory;
 import pattern_factory_method.game.factory.EasyGameDarkForcesFactory;
 import pattern_factory_method.game.factory.HighGameDarkForcesFactory;
@@ -23,6 +25,7 @@ public class Game {
             }
         }
         Forest forest = Forest.getInstance();
+
         forest.setDarkForces(Arrays.asList(darkForcesFactory.createMonster()));
 
         System.out.println("loading...");
@@ -32,6 +35,7 @@ public class Game {
         }
         System.out.println("This is your enemies: ");
         System.out.println(forest.getDarkForces());
+
         System.out.println("GAME STARTED!");
     }
 

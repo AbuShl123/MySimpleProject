@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class EasyGameDarkForcesFactory implements DarkForcesFactory {
     @Override
-    public DarkForces[] createMonster() {
+    public DarkForces[] createMonsters() {
         int amount = new Random().nextInt(3)+3;
         DarkForces[] entities = new DarkForces[amount];
         for (int i = 0; i < amount; i++) {

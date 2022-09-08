@@ -2,8 +2,8 @@ package pattern_factory_method.game.darkForces;
 
 public abstract class DarkProperties implements DarkForces{
     private final String name;
-    private int health;
-    private int damage;
+    public int health;
+    public int damage;
 
     public DarkProperties(String name, int health, int damage) {
         this.name = name;
