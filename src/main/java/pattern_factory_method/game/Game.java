@@ -1,7 +1,5 @@
 package pattern_factory_method.game;
 
-import pattern_factory_method.game.darkForces.DarkForces;
-import pattern_factory_method.game.darkForces.ForestMonster;
 import pattern_factory_method.game.factory.DarkForcesFactory;
 import pattern_factory_method.game.factory.EasyGameDarkForcesFactory;
 import pattern_factory_method.game.factory.HighGameDarkForcesFactory;
@@ -26,7 +24,7 @@ public class Game {
         }
         Forest forest = Forest.getInstance();
 
-        forest.setDarkForces(Arrays.asList(darkForcesFactory.createMonster()));
+        forest.setDarkForces(Arrays.asList(darkForcesFactory.createMonsters()));
 
         System.out.println("loading...");
         for (int i = 0; i < 5; i++) {
