@@ -1,12 +1,34 @@
 package leepcode_tasks;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class LetterCombinationsOf_A_PhoneNumber {
+    /*
+    [a,b,c] -> [b,c,ad,ae,af] -> [ad,ae,af,bd,be,bf,cd,ce,cf] ->
+     */
+
     public static List<String> letterCombinations(String digits) {  // "23"
+        LinkedList<String> ans = new LinkedList<>();
+        if (digits.isEmpty()) return ans;
+        String[] mapping = {"0", "1", "abc", "def", "ghi", "jkl", "mno", "opqr", "tuv", "wxyz"};
+
+        ans.add("");
+
+        for (int i = 0; i < digits.length(); i++) { // 23
+            int x = digits.charAt(i) - '0';
+
+            while (ans.peek().length() == i) {
+                String t = ans.remove();
+                for (char c : mapping[x].toCharArray()) {
+                    ans.add(t + c);
+                }
+            }
+        }
+        return ans;
+    }
+
+
+    public static List<String> letCom(String digits) {
         Map<Integer, Character[]> map = new HashMap<>(
                 Map.of(
                         2, new Character[] {'a', 'b', 'c'},
@@ -20,6 +42,7 @@ public class LetterCombinationsOf_A_PhoneNumber {
         );
         List<String> l = new ArrayList<>();
         int len = digits.length();
+        if (len == 0) return l;
         for (char a : map.get(digits.charAt(0)-'0')) {
             if (len == 1) {
                 StringBuilder sb = new StringBuilder();
@@ -53,37 +76,8 @@ public class LetterCombinationsOf_A_PhoneNumber {
         return l;
     }
 
-    public List<String> letterCombin(String digits) {
-        List<String> res = new ArrayList<>();
-        outComes(digits, 0, new StringBuilder(), res);
-        return res;
-    }
-
-    void outComes(String digit, int p, StringBuilder sb, List<String> res) {
-        String chars = getChar(digit.charAt(p)); // abc
-        for (char e : chars.toCharArray()) {
-            sb.append(e); // a
-            outComes(digit, p+1, sb, res);
-            sb.setLength(sb.length()-1);
-        }
-    }
-
-    String getChar(char digit){
-        String letters = "";
-        switch (digit) {
-            case '2': letters = "abc"; break;
-            case '3': letters = "def"; break;
-            case '4': letters = "ghi"; break;
-            case '5': letters = "jkl"; break;
-            case '6': letters = "mno"; break;
-            case '7': letters = "pqrs"; break;
-            case '8': letters = "tuv"; break;
-            case '9': letters = "wxyz"; break;
-        }
-        return letters;
-    }
 
     public static void main(String[] args) {
-        System.out.println(letterCombinations("234"));
+        System.out.println(letterCombinations("29"));
     }
 }
