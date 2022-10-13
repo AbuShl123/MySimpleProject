@@ -12,5 +12,7 @@ public class Main {
         obj.iWriter = new SquareBracketsWriter();
         obj.writeText("Hello world");
 
+        StandardWriter standardWriter = new StandardWriter();
+
     }
 }
