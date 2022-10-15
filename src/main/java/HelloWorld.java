@@ -2,12 +2,12 @@ import java.util.*;
 
 public class HelloWorld {
     public static void main(String[] args) {
+        List<String> list = new ArrayList<>(Arrays.asList("moon", "weather", "coat", "rain"));
 
-        int b = 128;
+        String[] arr = list.toArray(new String[0]) ;
 
-        int digit = b%10;
+        System.out.println(Arrays.toString(arr));
 
-        b = b / 10; // 1
-
+        System.out.println("bb".compareTo("zz"));
     }
 }
