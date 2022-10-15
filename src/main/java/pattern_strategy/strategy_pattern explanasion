@@ -1,0 +1,11 @@
+    Behavioural design patter --> Strategy pattern
+
+        Identification:
+                Strategy pattern can be recognized by a method that lets a
+                nested object do the actual work, as well as a setter that allows
+                replacing that object with a different one.
+
+Definition:
+    </> Strategy -> is a behavioral design pattern that turns a set of behaviors into objects
+                    and makes them interchangeable inside original context object.
+
