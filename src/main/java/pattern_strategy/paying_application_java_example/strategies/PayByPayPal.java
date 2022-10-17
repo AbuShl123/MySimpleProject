@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * concrete strategy implements PayPal payment method
  */
-public class PayByPayPal implements PayStrategy{
+public class PayByPayPal implements PayStrategy {
     private static final Map<String, String> DATA_BASE = new HashMap<>();
 
     private final BufferedReader READER = new BufferedReader(new InputStreamReader(System.in));
@@ -30,13 +30,13 @@ public class PayByPayPal implements PayStrategy{
     public void collectPaymentDetails() {
         try {
             while (!signedIn) {
-                System.out.println("Enter the user's name: ");
-                email = READER.readLine();
-                System.out.println("Enter the user's password: ");
-                password = READER.readLine();
+                System.out.print("Enter the user's name: ");
+                this.email = READER.readLine();
+                System.out.print("Enter the user's password: ");
+                this.password = READER.readLine();
 
                 if (verify()) {
-                    System.out.println("Data verification has been succeed");
+                    System.out.println("Data verification has been successful");
                 } else {
                     System.out.println("Wrong email or password!");
                 }
@@ -46,14 +46,23 @@ public class PayByPayPal implements PayStrategy{
         }
     }
 
+    /**
+     * Save customer data for future shopping elements
+     */
     @Override
     public boolean pay(int paymentAmount) {
-        return false;
+        if (signedIn) {
+            System.out.println("Paying " + paymentAmount + " using PayPal");
+            return true;
+        } else {
+            return false;
+        }
     }
 
 
-    public boolean verify() {
-        return false;
+    public boolean verify() { // in other words -> getter
+        setSignedIn(email.equals(DATA_BASE.get(password)));
+        return signedIn;
     }
 
     public void setSignedIn(boolean signedIn) {
