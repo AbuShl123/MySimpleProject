@@ -60,7 +60,7 @@ public class PayByPayPal implements PayStrategy {
     }
 
 
-    public boolean verify() { // in other words -> getter
+    public boolean verify() {
         setSignedIn(email.equals(DATA_BASE.get(password)));
         return signedIn;
     }
