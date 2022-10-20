@@ -50,6 +50,9 @@ public class PayByCreditCard implements PayStrategy{
     @Override
     public boolean pay(int paymentAmount) {
         if (cardIsPresent()) {
+            if (paymentAmount > card.getAmount()) {
+                System.out.println("Sorry, not enough credits on your account!");
+            }
             System.out.println("Paying " + paymentAmount + " using Credit Card");
             card.setAmount(card.getAmount() - paymentAmount);
             return true;

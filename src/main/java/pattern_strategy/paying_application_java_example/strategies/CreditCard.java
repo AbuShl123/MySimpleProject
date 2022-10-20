@@ -2,9 +2,9 @@ package pattern_strategy.paying_application_java_example.strategies;
 
 public class CreditCard {
     private int amount;
-    private String number;
-    private String date;
-    private String cvv;
+    private final String number;
+    private final String date;
+    private final String cvv;
 
     CreditCard(String number, String date, String cvv) {
         this.amount = 100_000;
