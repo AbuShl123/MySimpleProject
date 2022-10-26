@@ -9,4 +9,10 @@ public class ConstructorGames {
         height = theHeight;
         this.name = "white"; // redundant
     }
+
+    public int instanceMethod(){
+        //this(0, 2);
+        int a = 12;
+        return 0;
+    }
 }
