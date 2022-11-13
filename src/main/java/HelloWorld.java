@@ -42,5 +42,9 @@ public class HelloWorld {
         System.out.println(reverseString("Abubakr"));
 
         System.out.println(sortFromAlphanumeric("DC501GCCCA098911"));
+
+        String[] arr = new String[0];
+
+
     }
 }
