@@ -6,7 +6,7 @@ import java.util.LinkedList;
 public class SimpleMethods {
     public static void main(String[] args) {
 
-        LinkedList<String> linkedList = new LinkedList<>(Arrays.asList("a", "b", "c", "d"));
+        LinkedList<String> linkedList = new LinkedList<>(Arrays.asList("interface_and_generics", "b", "c", "d"));
 
         System.out.println(linkedList);
 
